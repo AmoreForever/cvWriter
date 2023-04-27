@@ -29,9 +29,7 @@ class Copilot:
     def clear_text(self, text):
         a = text.replace("\n", " ")
         b = a.split()
-        c = " ".join(b)
-
-        return c
+        return " ".join(b)
 
     def get_cover_letter(self, resume, job):
         load_dotenv()
@@ -57,9 +55,7 @@ class Copilot:
         parsed_json = json.loads(json_string)
 
         text = parsed_json['choices'][0]['text']
-        cleared_text = self.clear_text(text)
-        
-        return cleared_text
+        return self.clear_text(text)
 
     def get_resume(self, resume, job):
         load_dotenv()
@@ -85,7 +81,5 @@ class Copilot:
         parsed_json = json.loads(json_string)
 
         text = parsed_json['choices'][0]['text']
-        cleared_text = self.clear_text(text)
-        
-        return cleared_text
+        return self.clear_text(text)
 
